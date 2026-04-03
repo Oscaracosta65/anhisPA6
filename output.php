@@ -45,7 +45,7 @@ $gameHasBonus  = false;
 $gameBonusLabel = '';
 $gameBonusMin  = 0;
 $gameBonusMax  = 0;
-$gameBonusCol  = 'sixth';
+$gameBonusCol  = 'sixth';       // DB column name for bonus ball; passed to leGetPreviousOccurrenceDate for game-aware queries
 $gameMainCols  = ['first', 'second', 'third', 'fourth', 'fifth'];
 
 /**
@@ -91,7 +91,7 @@ if ($loginStatus === 1) {
         $userPhone = str_replace('(', '', $userPhone);
         $userPhone = str_replace(')', '-', $userPhone);
     } else {
-        $userPhone = 'NULL';
+        $userPhone = '';
     }
 }
 
@@ -2271,3 +2271,4 @@ table.skai-table tbody tr:hover{background:rgba(28,102,255,.04)}
 }());
 </script>
 <?php echo HTMLHelper::_('content.prepare', '{loadposition Pick5Wheels}'); ?>
+<?php /* Joomla module position: renders Pick5 number wheels / quick-pick widget assigned in the CMS */ ?>
